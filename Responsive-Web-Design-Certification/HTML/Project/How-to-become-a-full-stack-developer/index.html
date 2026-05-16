@@ -467,7 +467,7 @@
         </p>
         <!--Another example of void element: <img> -->
         <center>
-            <img src="img/full-stack-developer-toolkit.png" alt="Full Stack Developer Toolkit" width="750" height="500">
+            <img src="img/full-stack-developer-toolkit.png" alt="Full Stack Developer Toolkit" width="750" height="500"/>
         </center>
         <p>
             Embarking on the journey to become a full stack developer can be both exciting and overwhelming. With many technologies to learn, it's essential to have a clear roadmap. This next part of the article will break down each component of this roadmap, explaining its importance and core concepts.
@@ -799,5 +799,81 @@
         <p>
             By mastering these topics, you'll be able to build robust and efficient applications that can handle a wide range of data management needs. <a href="https://www.freecodecamp.org/news/how-to-authenticate-users-and-implement-cors-in-nodejs-applications/">This article</a> puts into practice many of the concepts we've discussed so far that relate to backend security, so give it a read.            
         </p>
+        <h4>
+            CORS - Managing Cross-Origin Requests
+        </h4>
+        <p>
+            CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers to control how resources on a web page can be requested from another domain outside the domain from which the resource originated. This mechanism is crucial for preventing unauthorized access to sensitive data while allowing legitimate cross-origin requests.
+        </p>
+        <h4>
+            How Browsers Enforce CORS Policies
+        </h4>
+        <p>
+            Browsers enforce CORS policies through a set of HTTP headers that dictate whether a request from one origin (domain) should be permitted to access resources from another origin.
+        </p>
+        <p>
+            When a web page makes a cross-origin request, the browser first sends a preflight request using the HTTP OPTIONS method to check if the actual request is allowed. The server responds with appropriate CORS headers, such as Access-Control-Allow-Origin, which specifies the permitted origins. If the server allows the request, the browser proceeds with the actual request – otherwise, it blocks the request.
+        </p>
+        <h4>
+            Configuring CORS in Express.js Applications
+        </h4>
+        <p>
+           To configure CORS in an Express.js application, you can use the cors middleware. This middleware allows you to specify which origins are permitted to access your API, which HTTP methods are allowed, and other CORS-related settings. Here's a basic example of how to set up CORS in an Express.js application: 
+        </p>
+        <font color="blue">const</font> express = <font color="red">require</font><font color="gray">(</font><font color="green">'express'</font><font color="gray">);</font>
+         <!--Another example of void element: <br> -->
+         <br/>
+        <font color="blue">const</font> cors = <font color="red"></font> <font color="red">require</font><font color="gray">(</font><font color="green">'cors'</font><font color="gray">);</font>
+         <!--Example of void element: <br> -->
+        <br/>
+        <font color="blue">const</font> app = <font color="red">express</font><font color="gray">();</font>
+        <!--Example of void element: <br> -->
+        <br/>
+        <br/>
+        <font color="gray">// Use the cors middleware with default settings</font>
+        <!--Example of void element: <br> -->
+        <br>
+        app<font color="gray">.</font><font color="red">use</font><font color="gray">(</font><font color="red">cors</font><font color="gray">());</font>
+        <!--Example of void element: <br> -->
+        <br>
+        <br>
+        <font color="gray">// Or configure it with specific options</font>
+        <!--Example of void element: <br> -->
+        <br>
+        app<font color="gray">.</font><font color="red">use</font><font color="gray">(</font><font color="red">cors</font><font color="gray">({</font>
+        <!--Example of void element: <br> -->
+        <br>
+        <p style="margin-left: 20px;">
+            <font color="brown">origin:</font> <font color="green">'http://example.com'</font><font color="gray">,</font>
+            <!--Example of void element: <br> -->
+            <br>
+            <font color="brown">methods:</font> <font color="green">'GET,POST'</font><font color="gray">,</font>
+            <!--Example of void element: <br> -->
+            <br>
+            <font color="brown">allowedHeaders:</font> <font color="green">'Content-Type,Authorization'</font>
+            <!--Example of void element: <br> -->
+            <br>
+        </p>
+        <font color="gray">}));</font>
+        <!--Example of void element: <br> -->
+        <br>
+        <br>
+        app<font color="gray">.</font><font color="red">get</font><font color="gray">(</font><font color="green">'/'</font><font color="gray">, (</font>req<font color="gray">,</font> res<font color="gray">)</font> <font color="brown">=></font> <font color="gray">{</font>
+        <!--Example of void element: <br> -->
+        <br>
+        <p style="margin-left: 20px;">
+            res<font color="gray">.</font><font color="red">send</font><font color="gray">(</font><font color="green">'Hello World!'</font><font color="gray">);</font>
+            <!--Example of void element: <br> -->
+            <br>
+        </p>
+        <font color="gray">});</font>
+        <!--Example of void element: <br> -->
+        <br>
+        <br>
+        app<font color="gray">.</font><font color="red">listen</font><font color="gray">(</font><font color="brown">3000</font><font color="gray">,</font> <font color="gray">()</font> <font color="brown">=></font> <font color="gray">{</font>
+        <p style="margin-left: 20px;">
+            console<font color="gray">.</font><font color="red">log</font><font color="gray">(</font><font color="green">'Server is running on port 3000'</font><font color="gray">);</font>
+        </p>
+        <font color="gray">});</font>
     </body>
 </html>
