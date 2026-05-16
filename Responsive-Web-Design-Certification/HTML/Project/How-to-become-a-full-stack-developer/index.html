@@ -875,5 +875,24 @@
             console<font color="gray">.</font><font color="red">log</font><font color="gray">(</font><font color="green">'Server is running on port 3000'</font><font color="gray">);</font>
         </p>
         <font color="gray">});</font>
+        <p>
+            In this example, the cors middleware is used to enable CORS for all routes in the Express.js application. You can customize the origin, methods, and allowed headers to fit your application's requirements.
+        </p>
+        <h4>
+            Importance of Proper CORS Configuration
+        </h4>
+        <p>
+            Proper CORS configuration is essential to maintain the security of your web application. Allowing all origins or using overly permissive CORS settings can expose your application to security vulnerabilities, such as cross-site request forgery (CSRF) attacks. It's important to specify only the trusted origins and limit the allowed methods and headers to what is necessary for your application to function properly.
+        </p>
+        <h4>
+            .env Files – Managing Sensitive Data
+        </h4>
+        <p>
+            Sensitive information such as database credentials and API keys should not be hardcoded in the codebase. Instead, they are stored in .env (environment) files.
+        </p>
+        <p>
+            Example of a .env file:
+        </p>
+        <font color="brown">DATABASE_URL=</font>mongodb<font color="brown">://</font>username<font color="brown">:</font>password<font color="brown">@</font><font color="red">server</font> <font color="brown">SECRET_KEY=</font>mysecurekey
     </body>
 </html>
