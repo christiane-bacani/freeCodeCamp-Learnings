@@ -57,6 +57,19 @@
             <p>
                 Often times you will see multiple <b>&lt;link&gt;</b> lements inside a professional codebase that link to different stylesheets, fonts, and icons. Here is an example of using the <b>&lt;link&gt;</b> element to link to an external Google Font called <i>Playwright Cuba</i>:
             </p>
+            <section>
+                &lt;<span class="head-tag">link</span> <span class="attribute">rel</span>="<span class="attribute-value">preconnect</span>" <span class="attribute">href</span>="<span class="attribute-value">https://fonts.googleapis.com</span>" /&gt;
+                <br/>
+                &lt;<span class="head-tag">link</span> <span class="attribute">rel</span>="<span class="attribute-value">preconnect</span>" <span class="attribute">href</span>="<span class="attribute-value">https://fonts.gstatic.com</span>" <span class="attribute">crossorigin</span> /&gt;
+                <br/>
+                &lt;<span class="head-tag">link</span>
+                <p class="indented">
+                    <span class="attribute">href</span>="<span class="attribute-value">https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap</span>"
+                    <br/>
+                    <span class="attribute">rel</span>="<span class="attribute-value">stylesheet</span>"
+                </p>
+                /&gt;
+            </section>
         </main>
     </body>
 </html>
