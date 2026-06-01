@@ -25,3 +25,7 @@
 .keyword {
     color: #FF6B6B;
 }
+
+.comment {
+    color: gray
+}
