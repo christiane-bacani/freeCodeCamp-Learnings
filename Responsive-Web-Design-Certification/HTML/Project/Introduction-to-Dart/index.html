@@ -130,6 +130,28 @@
             <p>
                 Read more about control flow statements in Dart, including <a href="https://dart.dev/language/loops" target="_self"><b>break</b> and <b>continue</b></a>, <a href="https://dart.dev/language/branches" target="_self"><b>switch</b> and <b>case</b></a>, and <a href="assert" target="_self"><b>assert</b></a>.
             </p>
+
+            <!-- Functions -->
+            <h2>
+                Functions
+            </h2>
+            <p>
+                <a href="https://dart.dev/effective-dart/design#types" target="_self">We recommend</a> specifying the types of each function's arguments and return value:
+            </p>
+            <section class="google-sans-code-main">
+                <span class="return-type">int</span> <span class="function">fibonacci</span>(<span class="return-type">int</span> n) {
+                <p class="indent">
+                    <span class="keyword">if</span> (n <span class="keyword">==</span> <span class="value">0</span> <span class="keyword">||</span> n <span class="keyword">==</span> <span class="value">1</span>) <span class="keyword">return</span> n;
+                    
+                    <br/>
+                    <span class="keyword">return</span> <span class="function">fibonacci</span>(n - <span class="value">1</span>) <span class="keyword">+</span> <span class="function">fibonacci</span>(n <span class="keyword">-</span> <span class="value">2</span>);
+                </p>
+                }
+
+                <br/>
+                <br/>
+                <span class="keyword">var</span> result <span class="keyword">=</span> <span class="function">fibonacci</span>(<span class="value">20</span>);
+            </section>
         </main>
     </body>
 </html>
