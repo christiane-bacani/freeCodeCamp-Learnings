@@ -1,3 +1,15 @@
 .indented {
     margin-left: 20px;
 }
+
+.head-tag {
+    color: red;
+}
+
+.attribute {
+    color: green;
+}
+
+.attribute-value {
+    color: blue;
+}
