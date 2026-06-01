@@ -21,3 +21,7 @@
 .indent {
     margin-left: 20px;
 }
+
+.keyword {
+    color: #FF6B6B;
+}
