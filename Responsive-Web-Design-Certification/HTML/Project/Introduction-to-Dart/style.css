@@ -1,3 +1,11 @@
+.google-sans-code-main {
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MONO" 1;
+}
+
 .return-type {
     color: blue;
 }
