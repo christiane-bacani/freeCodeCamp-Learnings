@@ -41,7 +41,7 @@
             </p>
             <section class="google-sans-code-main">
                 <span class="return-type">void</span> <span class="function">main</span>() {
-                <p class="indent">
+                <p class="indent-level-1">
                     <span class="function">print</span>(<span class="value">'Hello, World!'</span>);
                 </p>
                 }
@@ -72,7 +72,7 @@
                 <br/>
                 <span class="keyword">var</span> image <span class="keyword">=</span>
                 
-                <p class="indent">
+                <p class="indent-level-1">
                     <span class="value">'tags'</span><span class="keyword">:</span> [<span class="value">'saturn'</span>];
 
                     <br/>
@@ -93,13 +93,13 @@
             </p>
             <section class="google-sans-code-main">
                 <span class="keyword">if</span> (year <span class="keyword">>=</span> <span class="value">2001</span>) {
-                <p class="indent">
+                <p class="indent-level-1">
                     <span class="function">print</span>(<span class="value">'21st century'</span>);
                 </p>
                 }
 
                 <span class="keyword">else if</span> (year <span class="keyword">>=</span> <span class="value">1901</span>) {
-                <p class="indent">
+                <p class="indent-level-1">
                     <span class="function">print</span>( <span class="value">'20th century'</span> );
                 </p>
                 }
@@ -107,14 +107,14 @@
                 <br/>
                 <br/>
                 <span class="keyword">for</span> (<span class="keyword">final</span> object <span class="keyword">in</span> flybyObjects) {
-                <p class="indent">
+                <p class="indent-level-1">
                     <span class="function">print</span>(object);
                 </p>
     
                 <br/>
                 <br/>
                 <span class="keyword">for</span> (<span class="return-type">int</span> month = <span class="value">1</span>; month <span class="keyword"><=</span> <span class="value">12</span>, month<span class="keyword">++</span>) {
-                <p class="indent">
+                <p class="indent-level-1">
                     <span class="function">print</span>(month);
                 </p>
                 }
@@ -122,7 +122,7 @@
                 <br/>
                 <br/>
                 <span class="keyword">while</span> (year < <span class="value">2016</span>) {
-                <p class="indent">
+                <p class="indent-level-1">
                     year <span>+=</span> <span class="value">1</span>;
                 </p>
                 }
@@ -140,7 +140,7 @@
             </p>
             <section class="google-sans-code-main">
                 <span class="return-type">int</span> <span class="function">fibonacci</span>(<span class="return-type">int</span> n) {
-                <p class="indent">
+                <p class="indent-level-1">
                     <span class="keyword">if</span> (n <span class="keyword">==</span> <span class="value">0</span> <span class="keyword">||</span> n <span class="keyword">==</span> <span class="value">1</span>) <span class="keyword">return</span> n;
                     
                     <br/>
@@ -229,16 +229,63 @@
                 Here's an example of a class with three properties, two constructors, and a method. One of the properties can't be set directly, so it's defined using a getter method (instead of a variable). The method uses string interpolation to print variables' string equivalents inside of string literals.
             </p>
             <section class="google-sans-code-main">
-                <span class="keyword">class</span> <span class="function">Spacecraft</span> {
-                <p class="indent">
-                    <span class="function">String</span> name;
+                <span class="keyword">class</span> <span class="return-type">Spacecraft</span> {
+                <p class="indent-level-1">
+                    <span class="return-type">String</span> name;
                     <br/>
-                    <span class="function">DateTime</span><span class="keyword">?</span> launchDate;
+                    <span class="return-type">DateTime</span><span class="keyword">?</span> launchDate;
 
                     <br/>
                     <br/>
                     <span class="comment">// Read-only non-final property</span>
+                    <br/>
+                    <span class="return-type">int</span><span class="keyword">? get</span> launchYear <span class="keyword">>=</span> launchYear<span class="keyword">?.</span>year;
+
+                    <br/>
+                    <br/>
+                    <span class="comment">// Constructor, with syntactic sugar for assignment to members.</span>
+                    <br/>
+                    <span class="return-type">Spacecraft</span>(<span class="keyword">this</span>.name, <span class="keyword">this</span>.launchDate) {
+                        <p class="indent-level-2">
+                            <span class="comment">// Initialization code goes here.</span>
+                        </p>
+                    &nbsp;&nbsp;}
+
+                    <br/>
+                    <br/>
+                    &nbsp;<span class="comment"> // Named constructor that forwards to the default one.</span>
+                    <br/>
+                    &nbsp;&nbsp;<span class="return-type">Spacecraft</span>.<span class="function">unlaunched</span>(<span class="return-type">String</span> name) <span class="keyword">: this</span>(name, <span class="value">null</span>);
+
+                    <br/>
+                    <br/>
+                    &nbsp;&nbsp;<span class="comment">// Method.</span>
+                    <br/>
+                    &nbsp;&nbsp;<span class="return-type">void</span> <span class="function">describe</span>() {
+                    <p class="indent-level-2">
+                        <span class="function">print(</span><span class="value">'Spacecraft: $name'</span>);
+                        <br/>
+                        <span class="comment">// Type promotion doesn't work on getters.</span>
+                        <br/>
+                        <span class="keyword">var</span> launchDate <span class="keyword">= this</span>.launchDate;
+                        <br/>
+                        <span class="keyword">if</span> (launchDate <span class="keyword">!=</span> <span class="value">null</span>) {
+                        <p class="indent-level-3">
+                            <span class="return-type">int</span> years <span class="keyword">=</span> <span class="return-type">DateTime</span>.<span class="function">now</span>().<span class="function">difference</span>(launchDate).inDays <span class="keyword">~/</span> <span class="value">365</span>;
+                            <br/>
+                            <span class="function">print</span>(<span class="value">'Launched: $launchYear ($years years ago)'</span>);
+                        </p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+        
+                        <span class="keyword">else</span> {
+                        <p class="indent-level-3">
+                            <span class="function">print</span>(<span class="value">'Unlaunched'</span>);
+                        </p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                    </p>
+                    &nbsp;&nbsp;}
                 </p>
+                }
             </section>
         </main>
     </body>
