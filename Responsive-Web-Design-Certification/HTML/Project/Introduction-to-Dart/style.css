@@ -22,6 +22,10 @@
     margin-left: 20px;
 }
 
+.indent-level-2 {
+    margin-left: 40px;
+}
+
 .keyword {
     color: #FF6B6B;
 }
