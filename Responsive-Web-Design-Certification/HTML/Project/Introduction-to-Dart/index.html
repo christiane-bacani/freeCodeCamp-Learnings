@@ -374,6 +374,61 @@
             <section class="google-sans-code-main">
                 <span class="keyword">enum</span> <span class="return-type">PlanetType</span> { terrestrial, gas, ice }
             </section>
+            <p>
+               Here is an example of an enhanced enum declaration of a class describing planets, with a defined set of constant instances, namely the planets of our own solar system. 
+            </p>
+            <section class="google-sans-code-main">
+                <span class="comment">/// Enum that enumerates the different planets in our solar system</span>
+                <br/>
+                <span class="comment">/// and some of their properties.</span>
+                <br/>
+                <span class="keyword">enum</span> <span class="return-type">Planet</span> {
+                    <p class="indent-level-1">
+                        <span class="function">mercury</span>(planetType<span class="keyword">:</span> <span class="return-type">PlanetType</span>.terrestrial, moons<span class="keyword">:</span> <span class="value">0</span>, hasRings<span class="keyword">:</span> <span class="value">false</span>),
+                        <br/>
+                        <span class="function">venus</span>(planetType<span class="keyword">:</span> <span class="return-type">PlanetType</span>.terrestrial, moons<span class="keyword">:</span> <span class="value">0</span>, hasRings<span class="keyword">:</span> <span class="value">false</span>),
+                        <br/>
+                        <span class="comment">// ···</span>
+                        <br/>
+                        <span class="function">uranus</span>(planetType<span class="keyword">:</span> <span class="return-type">PlanetType</span>.ice, moons<span class="keyword">:</span> <span class="value">27</span>, hasRings<span class="keyword">:</span> <span class="value">true</span>),
+                        <br/>
+                        <span class="function">neptune</span>(planetType<span class="keyword">:</span> <span class="return-type">PlanetType</span>.ice, moons<span class="keyword">:</span> <span class="value">14</span>, hasRings<span class="keyword">:</span> <span class="value">true</span>);
+
+                        <br/>
+                        <br/>
+                        <span class="comment">/// A constant generating constructor</span>
+                        <br/>
+                        <span class="keyword">const</span> <span class="return-type">Planet</span>({
+                        <p class="indent-level-2">
+                            <span class="keyword">required this</span>.planetType,
+                            <br/>
+                            <span class="keyword">required this</span>.moons,
+                            <br/>
+                            <span class="keyword">required this</span>.hasRings,
+                        </p>
+                        &nbsp;&nbsp;});
+
+                        <br/>
+                        <br/>
+                        &nbsp;<span class="comment">/// All instance variables are final</span>
+                        <br/>
+                        &nbsp;<span class="keyword">final</span> <span class="return-type">PlanetType</span> planetType;
+                        <br/>
+                        &nbsp;<span class="keyword">final</span> <span class="return-type">int</span> moons;
+                        <br/>
+                        &nbsp;<span class="keyword">final</span> <span class="return-type">bool</span> hasRings;
+
+                        <br/>
+                        <br/>
+                        &nbsp;<span class="comment">/// Enhanced enums support getters and other methods</span>
+                        <br/>
+                        &nbsp;<span class="return-type">bool</span> <span class="keyword">get</span> isGiant <span class="keyword">>=</span>
+                        <p class="indent-level-2">
+                            planetType <span class="keyword">==</span> <span class="return-type"></span> <span class="return-type">PlanetType</span>.gas <span class="keyword">||</span> planetType <span class="keyword">==</span> 
+                        </p>
+                    </p>
+                }
+            </section>
         </main>
     </body>
 </html>
