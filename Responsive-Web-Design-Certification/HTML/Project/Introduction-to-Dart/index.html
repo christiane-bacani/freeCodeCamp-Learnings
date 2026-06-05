@@ -443,6 +443,23 @@
                 </p>
                 }
             </section>
+            <p>
+                When the compiler can infer the enum type from the context, you can use the more concise dot-shorthand syntax to access enum values. Instead of writing the full <b>EnumName.value</b>, you can just write <b>.value</b>. This can make your code cleaner and easier to read.
+            </p>
+            <p>
+                For example, when declaring a variable with an explicit type of <b>Planet</b>, you can omit the enum name because the type of <b>Planet</b> is already established:
+            </p>
+            <section class="google-sans-code-main">
+                <span class="comment">// Instead of the full, explicit syntax:</span>
+                <br/>
+                <span class="return-type">Planet</span> myPlanet <span class="keyword">=</span> <span class="return-type">Planet</span>.venus;
+
+                <br/>
+                <br/>
+                <span class="comment">// You can use a dot shorthand:</span>
+                <br/>
+                <span class="return-type">Planet</span> myPlanet <span class="keyword">=</span> .venus;
+            </section>
         </main>
     </body>
 </html>
