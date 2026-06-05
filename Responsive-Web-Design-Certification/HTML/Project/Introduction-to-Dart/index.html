@@ -362,6 +362,7 @@
                 <a href="https://dart.dev/language/classes" target="_self">Read more</a> about classes in Dart, including initializer lists, optional <b>new</b> and <b>const</b>, redirecting constructors, <b>factory</b> constructors, getters, setters, and much more.
             </p>
 
+            <!-- Enums -->
             <h2 id="enums">
                 Enums
             </h2>
@@ -466,6 +467,25 @@
             <p>
                 <a href="https://dart.dev/language/enums" target="_self">Read more</a> about enums in Dart, including enhanced enum requirements, automatically introduced properties, accessing enumerated value names, switch statement support, and much more. <a href="https://dart.dev/language/dot-shorthands" target="_self">Read more</a> about dot shorthand syntax.
             </p>
+
+            <!-- Inheritance -->
+            <h2 id="inheritance">
+                Inheritance
+            </h2>
+            <p>
+                Dart has single inheritance.
+            </p>
+            <section class="google-sans-code-main">
+                <span class="keyword">class</span> <span class="return-type">Orbiter</span> <span class="keyword">extends</span> <span class="return-type">Spacecraft</span> {
+                <p class="indent-level-1">
+                    <span class="return-type">double</span> altitude;
+
+                    <br/>
+                    <br/>
+                    <span class="return-type">Orbiter</span>(<span class="keyword">super</span>.name, <span class="return-type">DateTime</span> <span class="keyword">super</span>.launchDate, <span class="keyword">this</span>.altitude);
+                </p>
+                }
+            </section>
         </main>
     </body>
 </html>
