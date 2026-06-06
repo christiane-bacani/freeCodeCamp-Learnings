@@ -651,6 +651,19 @@
             <p>
                 You can also use <b>async*</b>, which gives you a nice, readable way to build streams.
             </p>
+            <section class="google-sans-code-main">
+                <span class="return-type">Stream</span>&lt;<span class="return-type">String</span>&gt; <span class="function">report</span>(<span class="return-type">Spacecraft</span> craft, <span class="return-type">Iterable</span>&lt;<span class="return-type">String</span>&gt; objects) <span class="keyword">async*</span> {
+                <p class="indent-level-1">
+                    <span class="keyword">for</span> (<span class="keyword">final</span> object <span class="keyword">in</span> objects) {
+                    <p class="indent-level-2">
+                        <span class="keyword">await</span> <span class="return-type">Future</span>.<span class="function">delayed</span>(oneSecond);
+                        <br/>
+                        <span class="keyword">yield</span> <span class="value">'${craft.name} flies by $object'</span>;
+                    </p>
+                    &nbsp;&nbsp;}
+                </p>
+                }
+            </section>
         </main>
     </body>
 </html>
