@@ -579,6 +579,18 @@
             <h2 id="async">
                 Async
             </h2>
+            <section class="google-sans-code-main">
+                <span class="keyword">const</span> oneSecond <span class="keyword">=</span> <span class="return-type">Duration</span> (seconds<span class="keyword">:</span> <span class="value">1</span>);
+                <br/>
+                <span class="comment">// ...</span>
+                <br/>
+                <span class="return-type">Future</span>&lt;<span class="return-type">void</span>&gt; <span class="function">printWithDelay</span>(<span class="return-type">String</span> message) <span class="keyword">async</span> {
+                <p class="indent-level-1">
+                    <span class="keyword">await</span> <span class="return-type">Future</span>.<span class="function">delayed</span>(oneSecond);
+                    <br/>
+                    <span class="function">print</span>(message); 
+                </p>
+            </section>
         </main>
     </body>
 </html>
