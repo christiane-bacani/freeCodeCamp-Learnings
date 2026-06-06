@@ -597,6 +597,17 @@
             <p>
                 The method above is equivalent to:
             </p>
+            <section class="google-sans-code-main">
+                <span class="return-type">Future</span>&lt;<span class="return-type">void</span>&gt; <span class="function">printWithDelay</span>(<span class="return-type">String</span> message) {
+                <p class="indent-level-1">
+                    <span class="keyword">return</span> <span class="return-type">Future</span>.<span class="function">delayed</span>(oneSecond).<span class="function">then</span>((_) {
+                    <p class="indent-level-2">
+                        <span class="function">print</span>(message);
+                    </p>
+                    &nbsp;&nbsp;});
+                </p>
+                }
+            </section>
         </main>
     </body>
 </html>
