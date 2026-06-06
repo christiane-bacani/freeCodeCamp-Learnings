@@ -611,6 +611,43 @@
             <p>
                 As the next example shows, <b>async</b> and <b>await</b> help make asynchronous code easy to read.
             </p>
+            <section class="google-sans-code-main">
+                <span class="return-type">Future</span>&lt;<span class="return-type"></span><span class="return-type">void</span>> <span class="function">createDescriptions</span>(<span class="return-type"></span><span class="return-type">Iterable</span>&lt;<span class="return-type">String</span>&gt; objects) <span class="keyword">async</span> {
+                <p class="indent-level-1">
+                    <span class="keyword">for</span> (<span class="keyword">final</span> object <span class="keyword">in</span> objects) {
+                    <p class="indent-level-2">
+                        <span class="keyword">try</span> {
+                        <p class="indent-level-3">
+                            <span class="keyword">var</span> file <span class="keyword">=</span> <span class="return-type">File</span>(<span class="value">'$object.txt'</span>);
+                            <br/>
+                            <span class="keyword">if</span> (<span class="keyword">await</span> file.<span class="function">exists</span>()) {
+                            <p class="indent-level-4">
+                                <span class="keyword">var</span> modified <span class="keyword">= await</span> file.<span class="function">lastModified</span>();
+                                <br/>
+                                <span class="function">print</span>(
+                                <p class="indent-level-5">
+                                    <span class="value">'File for $object already exists. It was modified on $modified.'</span>,
+                                </p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span>;
+                            </p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                            <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">await</span> file.<span class="function">create</span>();
+                            <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">await</span> file.<span class="function">writeAsString</span>(<span class="value">'Start describing $object in this file.'</span>);
+                        </p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">on</span> <span class="return-type">IOException</span> <span class="keyword">catch</span> (e) {
+                        <p class="indent-level-3">
+                            <span class="function">print</span>(<span class="value">'Cannot create description for $object: $e'</span>);
+                        </p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                    </p>
+                    &nbsp;&nbsp;}
+                </p>
+                }
+            </section>
         </main>
     </body>
 </html>
