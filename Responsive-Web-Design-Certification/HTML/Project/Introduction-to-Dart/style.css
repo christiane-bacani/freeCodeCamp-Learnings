@@ -30,6 +30,10 @@
     margin-left: 60px;
 }
 
+.indent-level-4 {
+    margin-left: 80px;
+}
+
 .keyword {
     color: #FF6B6B;
 }
