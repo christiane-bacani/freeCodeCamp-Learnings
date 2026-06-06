@@ -549,7 +549,25 @@
             <p>
                 You can create an abstract class to be extended (or implemented) by a concrete class. Abstract classes can contain abstract methods (with empty bodies).
             </p>
-            <!-- TODO -->
+            <section class="google-sans-code-main">
+                <span class="keyword">abstract class</span> <span class="return-type">Describable</span> {
+                <p class="indent-level-1">
+                    <span class="return-type">void</span> <span class="function">describe</span>();
+
+                    <br/>
+                    <br/>
+                    <span class="return-type">void</span> <span class="function">describeWithEmphasis</span>() {
+                    <p class="indent-level-2">
+                        <span class="function">print</span>(<span class="value">'========='</span>);
+                        <br/>
+                        <span class="function">describe</span>();
+                        <br/>
+                        <span class="function">print</span>(<span class="value">'========='</span>)
+                    </p>
+                    &nbsp;&nbsp;}
+                </p>
+                }
+            </section>
         </main>
     </body>
 </html>
