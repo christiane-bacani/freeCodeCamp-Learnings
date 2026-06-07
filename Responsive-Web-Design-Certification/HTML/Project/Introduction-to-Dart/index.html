@@ -716,6 +716,76 @@
             <p>
                 <a href="https://dart.dev/language/error-handling#exceptions" target="_self">Read more</a> about exceptions, including stack traces, <b>rethrow</b>, and the difference between <b>Error</b> and <b>Exception</b>.
             </p>
+
+            <!-- Important concepts -->
+            <h2 id="important-concepts">
+                Important concepts
+            </h2>
+            <p>
+                As you continue to learn about the Dart language, keep these facts and concepts in mind:
+            </p>
+            <ul>
+                <li>
+                    Everything you can place in a variable is an <i>object</i>, and every object is an instance of a class. Even numbers, functions, and <b>null</b> are objects. With the exception of <b>null</b>
+                    (if you enable <a href="https://dart.dev/null-safety" target="_self">sound null safety</a>), all objects inherit from the <b><a href="https://api.dart.dev/dart-core/Object-class.html" target="_self">Object</a></b> class.
+                </li>
+           
+                <br/>
+                <strong>Version note:</strong>
+                <p>
+                    <a href="https://dart.dev/null-safety" target="_self">Null safety</a> was introduced in Dart 2.12. Using null safety requires a <a href="https://dart.dev/language/versioning" target="_self">language version</a> of at least 2.12.
+                </p>
+
+                <li>
+                    Although Dart is strongly typed, type annotations are optional because Dart can infer types. In <b>var number = 101</b>,
+                    <b>number</b> is referred to be of type <b>int</b>.
+                </li>
+
+                <li>
+                    Variables can't contain <b>null</b> unless you say they can. You can make a variable nullable by putting a question mark (<b>?</b>)
+                    at the end of its type. For example, a variable of type <b>int?</b> might be an integer, or it might be <b>null</b>. If you <em>know</em>
+                    that an expression never evaluates to <b>null</b> but Dart disagrees, you can add <b>!</b> to assert that it isn't null (and to throw an exception if it is). An example:
+                    <b>int x = nullableButNotNullInt!</b>
+                </li>
+
+                <li>
+                    When you want to explicitly say that any type is allowed, use the type <b>Object?</b> (if you've enabled null safety),
+                    <b>Object</b>, or—if you must defer type checking until runtime—the <a href="https://dart.dev/effective-dart/design#avoid-using-dynamic-unless-you-want-to-disable-static-checking" target="_self"> special type <b>dynamic</b></a>.
+                </li>
+
+                <li>
+                    Dart supports generic types, like <b>List&lt;int&gt;</b> (a list of integers) or <b>List&lt;Object&gt;</b> (a list of objects of any type).
+                </li>
+
+                <li>
+                    Dart supports top-level functions (such as <b>main()</b>), as well as functions tied to a class or object (<i>static</i> and <i>instance methods</i>, respetively).
+                    You can also create functions within functions (<i>nested</i> or <i>local functions</i>).
+                </li>
+
+                <li>
+                    Similarly, Dart supports top-level <i>variables</i>, as well as  variables tied to a class or object (static and instance variables). Instance variables are sometimes known as
+                    <i>fields</i> or <i>properties</i>.
+                </li>
+
+                <li>
+                    Unlike Java, Dart doesn't have the keywords <b>public</b>, <b>protected</b>, <b>private</b>. If an identifier stats with an underscore (<b>_</b>),
+                    it's private to its library. For details, see <a href="https://dart.dev/language/libraries" target="_self">Libraries and imports</a>.
+                </li>
+
+                <li>
+                    <i>Identifiers</i> can start with a a letter or underscore (<b>_</b>), followed by any combination of those characters plus digits.
+                </li>
+
+                <li>
+                    Dart has both <i>expressions</i> (which have runtime values) and <i>statements</i> (which don't). For example, the <a href="https://dart.dev/language/operators#conditional-expressions" target="_self">conditional expression</a>
+                    <b>condition ? expr1 : expr2</b> has a value of <b>expr1</b> or <b>expr2</b>. Compare that to an <a href="https://dart.dev/language/branches#if" target="_self">if-else statement</a>, which has no value. A statement often contains one or more expressions, but an expression can't directly contain a statement.
+                </li>
+
+                <li>
+                    Dart tools can report two kinds of problems: warnings and errors. Warnings are just indications that your code might not work, but they don't prevent your program from executing. Errors can be either compile-time or run-time. A compile-time error prevents the code from executing at all; a run-time error results in an
+                    <a href="https://dart.dev/language/error-handling#exceptions" target="_self">exception</a> being raised while the code executes.
+                </li>
+            </ul>
         </main>
     </body>
 </html>
