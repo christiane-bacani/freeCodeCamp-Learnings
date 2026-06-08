@@ -6,6 +6,23 @@
         <title>Champions</title>
         <link rel="icon" href="assets\icons\league-of-legends-icon.svg">
         <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- Hover Zoom Effect -->
+        <style>
+            main div {
+                overflow: hidden;
+                display: inline-block;
+            }
+
+            main div img {
+                transition: transform 0.3s ease;
+            }
+
+            main div img:hover {
+                transform: scale(1.08);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            }
+        </style>
     </head>
     <body>
         <header>
